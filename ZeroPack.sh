@@ -11,12 +11,6 @@ echo "                Hecho  por Dylan Sanchez y Por Efren Garcia         "
 sleep 5
 #aqui comenzare a instalar lo necesario, tu tranqui yo nervio
 echo "Estoy podria consumir muchos datos moviles, estas seguro?"
-select yn in "acepto" "cancelar"; do
-	case $yn in
-		acepto ) echo "en breve iniciare a trabajar"; break;;
-                cancelar ) EXIT ; exit;;
-                esac
-            done
 
 sleep 5
 echo $W "Instalando Lo necesario........"$G
