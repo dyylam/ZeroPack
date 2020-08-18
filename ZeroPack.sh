@@ -20,98 +20,65 @@ select yn in "acepto" "cancelar"; do
 
 sleep 5
 echo $W "Instalando Lo necesario........"$G
-pkg update && pkg upgrade -y 	#Justo aqui instalaremos lo necesario
-pkg install git
-pkg install python2
-pkg install curl
-pkg install wget			#Dato curioso: puedes usar nmap para identificar tu objetivo y sus servicios
-pkg install python3
-pkg install tor -y
-pkg install perl -y
-pkg install python-pip
-pkg install python3-pip
-pkg install net-tools
-pkg install php -y
-pkg install nmap -y
-pkg install apache2 -y 
-pkg install sslscan
-pkg install cowsay -y
-pkg install ruby -y
+apt-get update && apt-get upgrade  	#Justo aqui instalaremos lo necesario
+apt-get install git
+apt-get install python2
+apt-get install curl
+apt-get install wget			#Dato curioso: puedes usar nmap para identificar tu objetivo y sus servicios
+apt-get install python3
+apt-get install tor 
+apt-get install perl 
+apt-get install python-pip
+apt-get install python3-pip
+apt-get install net-tools
+apt-get install php 
+apt-get install nmap 
+apt-get install apache2 -
+apt-get install sslscan
+apt-get install cowsay 
+apt-get install ruby 
 python3 -m pip install pipenv
 echo "porfavor acepta......"
 sleep 3
 termux-setup-storage
 sleep 10
-mkdir osint
-cd osint 
-git clone https://github.com/CiKu370/OSIF
-cd OSIF
-pip2 install -r requirements.txt
-cd
-cd osint 
-git clone https://github.com/Datalux/Osintgram.git
-cd Osintgram
-pip3 install -r requirements.txt
-mkdir config
-cd
-cd osint
-git clone https://github.com/laramies/theHarvester
-git clone git clone https://github.com/sherlock-project/sherlock.git
-cd sherlock
-python3 -m pip install -r requirements.txt
-cd
-mkdir scaners
-cd scaners
-git clone https://github.com/Tuhinshubhra/RED_HAWK.git
-git clone https://github.com/nmap/nmap
-cd nmap
-./configure
-make
-make install
-cd
-cd scanners
-git clone git clone https://github.com/golismero/golismero.git
-cd golismero 
-pip install -r requirements.txt
-pip install -r requirements_unix.txt
-cd
-cd scanners
- pkg update && pkg upgrade -y
+pkg install proot
+git clone https://github.com/Neo-Oli/termux-ubuntu.git
+cd termux-ubuntu
+chmod +x ubuntu.sh
+./ubuntu.sh
+./start-ubuntu.sh
+echo "se instalara sqlmap"
+apt-get update && apt-get upgrade 
 apt install python python2
-pkg install git
+apt-get install git
 git clone https://github.com/sqlmapproject/sqlmap
 cd sqlmap
 chmod +x sqlmap.py
-cd
+cd ~
 sleep 5
 echo "se instalara metasploit-framework"
 curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/metasploit.sh
 chmod 777 metasploit.sh
 ./metasploit.sh
-pkg install metasploit
-cd
+apt-get install metasploit
 echo "se instalara set (social engineer tolkit)"
 curl -LO https://raw.githubusercontent.com/Hax4us/setoolkit/master/setoolkit.sh
 sh setoolkit.sh
 cd setoolkit
 ./setup.py install
-mkdir brute
-cd brute
-pkg update && pkg upgrade -y
-pkg install hydra
-git clone https://github.com/vanhauser-thc/thc-hydra.git
-./configure
-make
-make install
-cd
-cd brute
-git clone https://github.com/gkbrk/slowloris.git
-pip3 install PySocks
-cd
-cd brute
-git clone https://github.com/AngelSecurityTeam/BluForce-FB
-cd BluForce-FB
-pip2 install mechanize
-cd
-
-
+cd ~
+echo "se instalara nmap"
+apt-get install nmap
+echo "se instalara hydra"
+apt-get install hydra
+echo "se instalara Fsociety tool"
+git clone https://github.com/Manisso/fsociety.git
+cd fsociety
+pip2 install requests
+chmod +x fsociety.py
+cd ~
+echo "se instalara Tool-X"
+cd Tool-x
+chmod +x install.aex
+sh install.aex
